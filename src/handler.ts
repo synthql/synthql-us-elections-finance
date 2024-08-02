@@ -1,4 +1,4 @@
-import { createExpressSynthqlHandler } from "@synthql/backend";
 import { queryEngine } from "./queryEngine";
+import { createNextSynthqlHandler } from "./createNextSynthqlHandler";
 
-export const requestHandler = createExpressSynthqlHandler(queryEngine);
+export const nextSynthqlRequestHandler = createNextSynthqlHandler(queryEngine);

@@ -1,3 +1,5 @@
+"use client";
+
 import { SynthqlProvider } from "@synthql/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
