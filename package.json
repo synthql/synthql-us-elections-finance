@@ -1,12 +1,14 @@
 {
   "name": "synthql-us-elections-finance",
   "version": "0.1.0",
+  "license": "MIT",
   "scripts": {
     "dev": "dotenvx run -- next dev",
     "build": "dotenvx run -- next build",
     "start": "dotenvx run -- next start",
-    "lint": "next lint",
-    "generate:synthql": "dotenvx run -- bash -c 'npx @synthql/cli generate --out=src/generated --defaultSchema=public --schemas public --url \"$DATABASE_URL\"'"
+    "lint": "dotenvx run -- next lint",
+    "generate:pagila": "synthql generate --out=src/generated/synthql --defaultSchema=public --schemas public --tables actor --url=postgres://postgres:postgres@localhost:5432/postgres",
+    "generate:supabase": "dotenvx run -- bash -c 'npx @synthql/cli generate --out=src/generated --defaultSchema=public --schemas public --url \"$DATABASE_URL\"'"
   },
   "dependencies": {
     "@synthql/backend": "^0.78.4",

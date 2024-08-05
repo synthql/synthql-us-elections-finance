@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useSynthql } from "@synthql/react";
-import { DB } from "@/generated";
+import { DB } from "@/generated/synthql";
 import { q } from "@/queries";
 
 export default function Home() {
