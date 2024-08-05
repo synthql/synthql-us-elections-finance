@@ -6,13 +6,9 @@
  */
 
 /**
- * A PG int4
+ * A PG int8
  */
-export type PgCatalogInt4 = number;
-/**
- * A PG text
- */
-export type PgCatalogText = string;
+export type PgCatalogInt8 = number;
 /**
  * A PG timestamptz
  */
@@ -22,29 +18,29 @@ export type PgCatalogTimestamptz = Date;
  * Your database's schema
  */
 export interface DB {
-  actor: TableActor;
+  test_table_delete_this_later: TableTestTableDeleteThisLater;
 }
 /**
  * Table details:
  *
  * - Schema: public
- * - Table: actor
+ * - Table: test_table_delete_this_later
  */
-export interface TableActor {
+export interface TableTestTableDeleteThisLater {
   columns: {
     /**
      * Column details:
      *
      * - Schema: public
-     * - Table: actor
-     * - Column: actor_id
-     * - PG type: pg_catalog.int4
+     * - Table: test_table_delete_this_later
+     * - Column: id
+     * - PG type: pg_catalog.int8
      * - PG kind: base
      * - Nullable: false
-     * - Generated: NEVER
+     * - Generated: BY DEFAULT
      */
-    actor_id: {
-      type: PgCatalogInt4;
+    id: {
+      type: PgCatalogInt8;
       selectable: true;
       includable: true;
       whereable: true;
@@ -55,52 +51,14 @@ export interface TableActor {
      * Column details:
      *
      * - Schema: public
-     * - Table: actor
-     * - Column: first_name
-     * - PG type: pg_catalog.text
-     * - PG kind: base
-     * - Nullable: false
-     * - Generated: NEVER
-     */
-    first_name: {
-      type: PgCatalogText;
-      selectable: true;
-      includable: true;
-      whereable: true;
-      nullable: false;
-      isPrimaryKey: false;
-    };
-    /**
-     * Column details:
-     *
-     * - Schema: public
-     * - Table: actor
-     * - Column: last_name
-     * - PG type: pg_catalog.text
-     * - PG kind: base
-     * - Nullable: false
-     * - Generated: NEVER
-     */
-    last_name: {
-      type: PgCatalogText;
-      selectable: true;
-      includable: true;
-      whereable: true;
-      nullable: false;
-      isPrimaryKey: false;
-    };
-    /**
-     * Column details:
-     *
-     * - Schema: public
-     * - Table: actor
-     * - Column: last_update
+     * - Table: test_table_delete_this_later
+     * - Column: created_at
      * - PG type: pg_catalog.timestamptz
      * - PG kind: base
      * - Nullable: false
      * - Generated: NEVER
      */
-    last_update: {
+    created_at: {
       type: PgCatalogTimestamptz;
       selectable: true;
       includable: true;
