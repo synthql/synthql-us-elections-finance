@@ -1,35 +1,39 @@
 {
-  "name": "synthql-us-elections-finance",
-  "version": "0.1.0",
-  "license": "MIT",
-  "scripts": {
-    "dev": "dotenvx run -- next dev",
-    "build": "dotenvx run -- next build",
-    "start": "dotenvx run -- next start",
-    "lint": "dotenvx run -- next lint",
-    "generate:pagila": "synthql generate --out=src/generated/synthql --defaultSchema=public --schemas public --tables actor --url=postgres://postgres:postgres@localhost:5432/postgres",
-    "generate:supabase": "dotenvx run -- bash -c 'npx @synthql/cli generate --out=src/generated --defaultSchema=public --schemas public --url \"$DATABASE_URL\"'"
-  },
-  "dependencies": {
-    "@synthql/backend": "^0.78.4",
-    "@synthql/cli": "^0.78.4",
-    "@synthql/queries": "^0.78.4",
-    "@synthql/react": "^0.78.4",
-    "@tanstack/react-query": "^5.51.18",
-    "next": "14.2.5",
-    "pg": "^8.12.0",
-    "react": "^18",
-    "react-dom": "^18"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/pg": "^8.11.6",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.5",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
-  }
+    "name": "synthql-us-elections-finance",
+    "version": "0.1.0",
+    "license": "MIT",
+    "scripts": {
+        "dev": "dotenvx run -- next dev",
+        "build": "dotenvx run -- next build",
+        "start": "dotenvx run -- next start",
+        "lint": "dotenvx run -- next lint",
+        "create:db": "npx tsc src/create.ts --outDir ./dist && dotenvx run -- node dist/create",
+        "insert:db": "npx tsc src/insert.ts --outDir ./dist && dotenvx run -- node dist/insert",
+        "fetch:db": "npx tsc src/fetch.ts --outDir ./dist && dotenvx run -- node dist/fetch",
+        "generate:pagila": "synthql generate --out=src/generated/synthql --defaultSchema=public --schemas public --tables actor --url=postgres://postgres:postgres@localhost:5432/postgres",
+        "generate:supabase": "dotenvx run -- bash -c 'synthql generate --out=src/generated --defaultSchema=public --schemas public --url=\"$DATABASE_URL\"'"
+    },
+    "dependencies": {
+        "@synthql/backend": "^0.78.4",
+        "@synthql/cli": "^0.78.4",
+        "@synthql/queries": "^0.78.4",
+        "@synthql/react": "^0.78.4",
+        "@tanstack/react-query": "^5.51.18",
+        "next": "14.2.5",
+        "pg": "^8.12.0",
+        "react": "^18",
+        "react-dom": "^18"
+    },
+    "devDependencies": {
+        "@types/node": "^20",
+        "@types/pg": "^8.11.6",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "eslint": "^8",
+        "eslint-config-next": "14.2.5",
+        "postcss": "^8",
+        "prettier": "3.3.3",
+        "tailwindcss": "^3.4.1",
+        "typescript": "^5"
+    }
 }

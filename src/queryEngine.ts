@@ -1,5 +1,5 @@
-import { QueryEngine } from "@synthql/backend";
+import { QueryEngine } from '@synthql/backend';
 
 export const queryEngine = new QueryEngine({
-  url: process.env.DATABASE_URL,
+    url: process.env.DATABASE_URL,
 });

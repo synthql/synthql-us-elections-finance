@@ -22,7 +22,7 @@ export type PgCatalogTimestamptz = Date;
  * Your database's schema
  */
 export interface DB {
-  actor: TableActor;
+    actor: TableActor;
 }
 /**
  * Table details:
@@ -31,82 +31,82 @@ export interface DB {
  * - Table: actor
  */
 export interface TableActor {
-  columns: {
-    /**
-     * Column details:
-     *
-     * - Schema: public
-     * - Table: actor
-     * - Column: actor_id
-     * - PG type: pg_catalog.int4
-     * - PG kind: base
-     * - Nullable: false
-     * - Generated: NEVER
-     */
-    actor_id: {
-      type: PgCatalogInt4;
-      selectable: true;
-      includable: true;
-      whereable: true;
-      nullable: false;
-      isPrimaryKey: true;
+    columns: {
+        /**
+         * Column details:
+         *
+         * - Schema: public
+         * - Table: actor
+         * - Column: actor_id
+         * - PG type: pg_catalog.int4
+         * - PG kind: base
+         * - Nullable: false
+         * - Generated: NEVER
+         */
+        actor_id: {
+            type: PgCatalogInt4;
+            selectable: true;
+            includable: true;
+            whereable: true;
+            nullable: false;
+            isPrimaryKey: true;
+        };
+        /**
+         * Column details:
+         *
+         * - Schema: public
+         * - Table: actor
+         * - Column: first_name
+         * - PG type: pg_catalog.text
+         * - PG kind: base
+         * - Nullable: false
+         * - Generated: NEVER
+         */
+        first_name: {
+            type: PgCatalogText;
+            selectable: true;
+            includable: true;
+            whereable: true;
+            nullable: false;
+            isPrimaryKey: false;
+        };
+        /**
+         * Column details:
+         *
+         * - Schema: public
+         * - Table: actor
+         * - Column: last_name
+         * - PG type: pg_catalog.text
+         * - PG kind: base
+         * - Nullable: false
+         * - Generated: NEVER
+         */
+        last_name: {
+            type: PgCatalogText;
+            selectable: true;
+            includable: true;
+            whereable: true;
+            nullable: false;
+            isPrimaryKey: false;
+        };
+        /**
+         * Column details:
+         *
+         * - Schema: public
+         * - Table: actor
+         * - Column: last_update
+         * - PG type: pg_catalog.timestamptz
+         * - PG kind: base
+         * - Nullable: false
+         * - Generated: NEVER
+         */
+        last_update: {
+            type: PgCatalogTimestamptz;
+            selectable: true;
+            includable: true;
+            whereable: true;
+            nullable: false;
+            isPrimaryKey: false;
+        };
     };
-    /**
-     * Column details:
-     *
-     * - Schema: public
-     * - Table: actor
-     * - Column: first_name
-     * - PG type: pg_catalog.text
-     * - PG kind: base
-     * - Nullable: false
-     * - Generated: NEVER
-     */
-    first_name: {
-      type: PgCatalogText;
-      selectable: true;
-      includable: true;
-      whereable: true;
-      nullable: false;
-      isPrimaryKey: false;
-    };
-    /**
-     * Column details:
-     *
-     * - Schema: public
-     * - Table: actor
-     * - Column: last_name
-     * - PG type: pg_catalog.text
-     * - PG kind: base
-     * - Nullable: false
-     * - Generated: NEVER
-     */
-    last_name: {
-      type: PgCatalogText;
-      selectable: true;
-      includable: true;
-      whereable: true;
-      nullable: false;
-      isPrimaryKey: false;
-    };
-    /**
-     * Column details:
-     *
-     * - Schema: public
-     * - Table: actor
-     * - Column: last_update
-     * - PG type: pg_catalog.timestamptz
-     * - PG kind: base
-     * - Nullable: false
-     * - Generated: NEVER
-     */
-    last_update: {
-      type: PgCatalogTimestamptz;
-      selectable: true;
-      includable: true;
-      whereable: true;
-      nullable: false;
-      isPrimaryKey: false;
-    };
-  };
 }
