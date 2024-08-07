@@ -4,14 +4,15 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient();
 
-export function Providers(
-    props: React.PropsWithChildren<{ endpoint: string }>,
-) {
+export function Providers(props: React.PropsWithChildren<{}>) {
     return (
         <QueryClientProvider client={queryClient}>
             <SynthqlProvider
                 value={{
-                    endpoint: props.endpoint,
+                    endpoint:
+                        typeof window !== 'undefined'
+                            ? window.location.href + 'synthql'
+                            : 'http://localhost:3000/' + 'synthql',
                     requestInit: {
                         method: 'POST',
                     },
