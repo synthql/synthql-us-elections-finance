@@ -9,7 +9,8 @@ export default function Home() {
         <div className="w-full">
             <header className="bg-[#b22234] py-6 px-4 md:px-6">
                 <h1 className="text-3xl font-bold text-white">
-                    US Presidential Election Candidate Funding and Spending
+                    2024 US Presidential Election Candidates&apos; Campaign
+                    Finances
                 </h1>
             </header>
             <main className="container mx-auto py-12 px-4 md:px-6 grid gap-12">
