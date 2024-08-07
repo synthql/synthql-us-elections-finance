@@ -7,11 +7,11 @@
         "build": "dotenvx run -- next build",
         "start": "dotenvx run -- next start",
         "lint": "dotenvx run -- next lint",
+        "format": "dotenvx run -- prettier . --write",
         "create:db": "npx tsc src/create.ts --outDir ./dist && dotenvx run -- node dist/create",
         "insert:db": "npx tsc src/insert.ts --outDir ./dist && dotenvx run -- node dist/insert",
         "fetch:db": "npx tsc src/fetch.ts --outDir ./dist && dotenvx run -- node dist/fetch",
-        "generate:pagila": "synthql generate --out=src/generated/synthql --defaultSchema=public --schemas public --tables actor --url=postgres://postgres:postgres@localhost:5432/postgres",
-        "generate:supabase": "dotenvx run -- bash -c 'synthql generate --out=src/generated --defaultSchema=public --schemas public --url=\"$DATABASE_URL\"'"
+        "generate:db": "dotenvx run -- bash -c 'synthql generate --out=src/generated --defaultSchema=public --schemas public --url=\"$DATABASE_URL\"'"
     },
     "dependencies": {
         "@synthql/backend": "^0.78.4",
@@ -19,10 +19,12 @@
         "@synthql/queries": "^0.78.4",
         "@synthql/react": "^0.78.4",
         "@tanstack/react-query": "^5.51.18",
+        "clsx": "^2.1.1",
         "next": "14.2.5",
         "pg": "^8.12.0",
         "react": "^18",
-        "react-dom": "^18"
+        "react-dom": "^18",
+        "tailwind-merge": "^2.4.0"
     },
     "devDependencies": {
         "@types/node": "^20",
@@ -31,6 +33,7 @@
         "@types/react-dom": "^18",
         "eslint": "^8",
         "eslint-config-next": "14.2.5",
+        "eslint-config-prettier": "^9.1.0",
         "postcss": "^8",
         "prettier": "3.3.3",
         "tailwindcss": "^3.4.1",
