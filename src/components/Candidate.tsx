@@ -1,19 +1,13 @@
+import { QueryResult } from '@synthql/queries';
 import {
     HARRIS_CANDIDATE_ID,
     KENNEDY_CANDIDATE_ID,
     TRUMP_CANDIDATE_ID,
 } from '@/constants';
+import { DB } from '@/generated';
+import { q } from '@/queries';
 
-export function Candidate(props: {
-    candidate: {
-        candidate_id: string;
-        disbursements: string | null;
-        last_cash_on_hand_end_period: string | null;
-        last_debts_owed_by_committee: string | null;
-        last_debts_owed_to_committee: string | null;
-        receipts: string | null;
-    };
-}) {
+export function Candidate(props: { candidate: QueryResult<DB, typeof q>[0] }) {
     return (
         <section>
             <h2 className="text-2xl font-bold">
