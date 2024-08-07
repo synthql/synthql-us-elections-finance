@@ -11,8 +11,8 @@ export function Providers(props: React.PropsWithChildren<{}>) {
                 value={{
                     endpoint:
                         typeof window !== 'undefined'
-                            ? window.location.href + 'api/synthql'
-                            : 'http://localhost:3000/' + 'api/synthql',
+                            ? window.location.href + 'synthql'
+                            : 'http://localhost:3000/' + 'synthql',
                     requestInit: {
                         method: 'POST',
                     },
