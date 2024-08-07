@@ -4,7 +4,7 @@
     "license": "MIT",
     "scripts": {
         "dev": "dotenvx run -- next dev",
-        "build": "dotenvx run -- next build",
+        "build": "dotenvx run -- next build && echo $DATABASE_URL",
         "start": "dotenvx run -- next start",
         "lint": "dotenvx run -- next lint",
         "format": "dotenvx run -- prettier . --write",
