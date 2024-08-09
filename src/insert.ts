@@ -30,6 +30,6 @@ const insertData = async (candidateIds: string[]) => {
 
 insertData([
     HARRIS_CANDIDATE_ID,
-    TRUMP_CANDIDATE_ID,
     KENNEDY_CANDIDATE_ID,
+    TRUMP_CANDIDATE_ID,
 ]).then(() => process.exit(0));

@@ -45,7 +45,9 @@ export const createTableQuery = `
         total_offsets_to_operating_expenditures DECIMAL(15, 2),
         transaction_coverage_date DATE,
         transfers_from_affiliated_committee DECIMAL(15, 2),
-        transfers_to_other_authorized_committee DECIMAL(15, 2)
+        transfers_to_other_authorized_committee DECIMAL(15, 2),
+        created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        last_updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
     );
 `;
 
@@ -105,7 +107,7 @@ export const updateRowQuery = `
         total_offsets_to_operating_expenditures = $42,
         transaction_coverage_date = $43,
         transfers_from_affiliated_committee = $44,
-        transfers_to_other_authorized_committee = $45
-    WHERE
-        candidate_id = $46;
+        transfers_to_other_authorized_committee = $45,
+        last_updated_at = DEFAULT
+    WHERE candidate_id = $46;
 `;

@@ -975,5 +975,43 @@ export interface TableCandidateFinances {
             nullable: true;
             isPrimaryKey: false;
         };
+        /**
+         * Column details:
+         *
+         * - Schema: public
+         * - Table: candidate_finances
+         * - Column: created_at
+         * - PG type: pg_catalog.timestamptz
+         * - PG kind: base
+         * - Nullable: false
+         * - Generated: NEVER
+         */
+        created_at: {
+            type: PgCatalogTimestamptz;
+            selectable: true;
+            includable: true;
+            whereable: true;
+            nullable: false;
+            isPrimaryKey: false;
+        };
+        /**
+         * Column details:
+         *
+         * - Schema: public
+         * - Table: candidate_finances
+         * - Column: last_updated_at
+         * - PG type: pg_catalog.timestamptz
+         * - PG kind: base
+         * - Nullable: false
+         * - Generated: NEVER
+         */
+        last_updated_at: {
+            type: PgCatalogTimestamptz;
+            selectable: true;
+            includable: true;
+            whereable: true;
+            nullable: false;
+            isPrimaryKey: false;
+        };
     };
 }

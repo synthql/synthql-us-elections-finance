@@ -1,0 +1,29 @@
+name: Fetch Database
+
+on:
+    schedule:
+        - cron: '0 */6 * * *' # Runs every 6 hours
+    workflow_dispatch: # Allows manual triggering from the GitHub Actions tab
+
+jobs:
+    fetch_db:
+        name: Fetch data from OpenFEC and write to database
+        runs-on: ubuntu-latest
+        environment: actions
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '20'
+
+            - name: Install dependencies
+              run: yarn install
+
+            - name: Write database connection string to .env.local
+              run: echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > .env.local
+
+            - name: Run fetch script
+              run: yarn fetch:db

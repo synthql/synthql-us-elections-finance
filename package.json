@@ -3,16 +3,15 @@
     "version": "0.1.0",
     "license": "MIT",
     "scripts": {
-        "dotenvx": "dotenvx",
-        "dev": "dotenvx run --debug --verbose -- next dev",
-        "build": "dotenvx run --debug --verbose -- next build",
-        "start": "dotenvx run --debug --verbose -- next start",
-        "lint": "dotenvx run --debug --verbose -- next lint",
-        "format": "dotenvx run --debug --verbose -- prettier . --write",
-        "create:db": "npx tsc src/create.ts --outDir ./dist && dotenvx run -- node dist/create",
-        "insert:db": "npx tsc src/insert.ts --outDir ./dist && dotenvx run -- node dist/insert",
-        "fetch:db": "npx tsc src/fetch.ts --outDir ./dist && dotenvx run -- node dist/fetch",
-        "generate:db": "dotenvx run -- bash -c 'synthql generate --out=src/generated --defaultSchema=public --schemas public --url=\"$DATABASE_URL\"'"
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "format": "prettier . --write",
+        "generate:db": "dotenvx run -f .env.local -- bash -c 'synthql generate --out=src/generated --defaultSchema=public --schemas public --url=\"$DATABASE_URL\"'",
+        "create:db": "npx tsc src/create.ts --outDir ./dist && dotenvx run -f .env.local -- node dist/create",
+        "insert:db": "npx tsc src/insert.ts --outDir ./dist && dotenvx run -f .env.local -- node dist/insert",
+        "fetch:db": "npx tsc src/fetch.ts --outDir ./dist && dotenvx run -f .env.local -- node dist/fetch"
     },
     "dependencies": {
         "@dotenvx/dotenvx": "^1.6.4",

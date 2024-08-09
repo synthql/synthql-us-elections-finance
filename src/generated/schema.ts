@@ -2049,6 +2049,92 @@ export const schema: Schema<DB> = {
                             ],
                             additionalProperties: false,
                         },
+                        created_at: {
+                            type: 'object',
+                            description:
+                                'Column details:\n\n- Schema: public\n- Table: candidate_finances\n- Column: created_at\n- PG type: pg_catalog.timestamptz\n- PG kind: base\n- Nullable: false\n- Generated: NEVER',
+                            properties: {
+                                type: {
+                                    id: 'pg_catalog.timestamptz',
+                                    type: 'string',
+                                    format: 'date-time',
+                                    tsType: 'Date',
+                                    description: 'A PG timestamptz',
+                                },
+                                selectable: {
+                                    type: 'boolean',
+                                    const: true,
+                                },
+                                includable: {
+                                    type: 'boolean',
+                                    const: true,
+                                },
+                                whereable: {
+                                    type: 'boolean',
+                                    const: true,
+                                },
+                                nullable: {
+                                    type: 'boolean',
+                                    const: false,
+                                },
+                                isPrimaryKey: {
+                                    type: 'boolean',
+                                    const: false,
+                                },
+                            },
+                            required: [
+                                'type',
+                                'selectable',
+                                'includable',
+                                'whereable',
+                                'isPrimaryKey',
+                                'nullable',
+                            ],
+                            additionalProperties: false,
+                        },
+                        last_updated_at: {
+                            type: 'object',
+                            description:
+                                'Column details:\n\n- Schema: public\n- Table: candidate_finances\n- Column: last_updated_at\n- PG type: pg_catalog.timestamptz\n- PG kind: base\n- Nullable: false\n- Generated: NEVER',
+                            properties: {
+                                type: {
+                                    id: 'pg_catalog.timestamptz',
+                                    type: 'string',
+                                    format: 'date-time',
+                                    tsType: 'Date',
+                                    description: 'A PG timestamptz',
+                                },
+                                selectable: {
+                                    type: 'boolean',
+                                    const: true,
+                                },
+                                includable: {
+                                    type: 'boolean',
+                                    const: true,
+                                },
+                                whereable: {
+                                    type: 'boolean',
+                                    const: true,
+                                },
+                                nullable: {
+                                    type: 'boolean',
+                                    const: false,
+                                },
+                                isPrimaryKey: {
+                                    type: 'boolean',
+                                    const: false,
+                                },
+                            },
+                            required: [
+                                'type',
+                                'selectable',
+                                'includable',
+                                'whereable',
+                                'isPrimaryKey',
+                                'nullable',
+                            ],
+                            additionalProperties: false,
+                        },
                     },
                     required: [
                         'candidate_contribution',
@@ -2097,6 +2183,8 @@ export const schema: Schema<DB> = {
                         'transaction_coverage_date',
                         'transfers_from_affiliated_committee',
                         'transfers_to_other_authorized_committee',
+                        'created_at',
+                        'last_updated_at',
                     ],
                     additionalProperties: false,
                 },
@@ -4152,6 +4240,92 @@ export const schema: Schema<DB> = {
                             ],
                             additionalProperties: false,
                         },
+                        created_at: {
+                            type: 'object',
+                            description:
+                                'Column details:\n\n- Schema: public\n- Table: candidate_finances\n- Column: created_at\n- PG type: pg_catalog.timestamptz\n- PG kind: base\n- Nullable: false\n- Generated: NEVER',
+                            properties: {
+                                type: {
+                                    id: 'pg_catalog.timestamptz',
+                                    type: 'string',
+                                    format: 'date-time',
+                                    tsType: 'Date',
+                                    description: 'A PG timestamptz',
+                                },
+                                selectable: {
+                                    type: 'boolean',
+                                    const: true,
+                                },
+                                includable: {
+                                    type: 'boolean',
+                                    const: true,
+                                },
+                                whereable: {
+                                    type: 'boolean',
+                                    const: true,
+                                },
+                                nullable: {
+                                    type: 'boolean',
+                                    const: false,
+                                },
+                                isPrimaryKey: {
+                                    type: 'boolean',
+                                    const: false,
+                                },
+                            },
+                            required: [
+                                'type',
+                                'selectable',
+                                'includable',
+                                'whereable',
+                                'isPrimaryKey',
+                                'nullable',
+                            ],
+                            additionalProperties: false,
+                        },
+                        last_updated_at: {
+                            type: 'object',
+                            description:
+                                'Column details:\n\n- Schema: public\n- Table: candidate_finances\n- Column: last_updated_at\n- PG type: pg_catalog.timestamptz\n- PG kind: base\n- Nullable: false\n- Generated: NEVER',
+                            properties: {
+                                type: {
+                                    id: 'pg_catalog.timestamptz',
+                                    type: 'string',
+                                    format: 'date-time',
+                                    tsType: 'Date',
+                                    description: 'A PG timestamptz',
+                                },
+                                selectable: {
+                                    type: 'boolean',
+                                    const: true,
+                                },
+                                includable: {
+                                    type: 'boolean',
+                                    const: true,
+                                },
+                                whereable: {
+                                    type: 'boolean',
+                                    const: true,
+                                },
+                                nullable: {
+                                    type: 'boolean',
+                                    const: false,
+                                },
+                                isPrimaryKey: {
+                                    type: 'boolean',
+                                    const: false,
+                                },
+                            },
+                            required: [
+                                'type',
+                                'selectable',
+                                'includable',
+                                'whereable',
+                                'isPrimaryKey',
+                                'nullable',
+                            ],
+                            additionalProperties: false,
+                        },
                     },
                     required: [
                         'candidate_contribution',
@@ -4200,6 +4374,8 @@ export const schema: Schema<DB> = {
                         'transaction_coverage_date',
                         'transfers_from_affiliated_committee',
                         'transfers_to_other_authorized_committee',
+                        'created_at',
+                        'last_updated_at',
                     ],
                     additionalProperties: false,
                 },

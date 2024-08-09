@@ -8,5 +8,6 @@ export const q = from('candidate_finances')
         'last_cash_on_hand_end_period',
         'last_debts_owed_to_committee',
         'last_debts_owed_by_committee',
+        'last_updated_at',
     )
     .take(3);
