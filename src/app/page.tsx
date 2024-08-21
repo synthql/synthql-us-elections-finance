@@ -13,7 +13,7 @@ export default function Home() {
         <div className="w-full">
             <header className="bg-[#b22234] py-6 px-4 md:px-6">
                 <h1 className="text-3xl font-bold text-white">
-                    2024 US Presidential Election Candidates&apos; Campaign
+                    2024 US Presidential Elections Candidates&apos; Campaign
                     Finances
                 </h1>
             </header>
@@ -100,12 +100,12 @@ export default function Home() {
     );
 }
 
-function convertToHumanReadable(dateTimeString: string | Date): string {
+function convertToHumanReadable(dateTimeString: string): string {
     const date = new Date(dateTimeString);
 
     // Check if date is invalid
     if (isNaN(date.getTime())) {
-        throw new Error('Invalid date string');
+        throw new Error('Invalid date string!');
     }
 
     // Define options for the date formatting
